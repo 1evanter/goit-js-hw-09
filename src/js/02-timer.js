@@ -33,7 +33,7 @@ function timerStart() {
        timerId = setInterval(() => {
             const finishTime = fp.selectedDates[0].getTime();
             const currentTime = Date.now();
-            deltaTime = finishTime - currentTime;
+            const deltaTime = finishTime - currentTime;
            if (deltaTime <= 0) {
                clearInterval(timerId);
                return;

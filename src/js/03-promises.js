@@ -2,9 +2,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const refs = {
   formEl: document.querySelector('.form'),
-  delayField: document.querySelector('input[name=delay]'),
-  stepField: document.querySelector('input[name=step]'),
-  amountField: document.querySelector('input[name=amount]'),
+  delayField: document.querySelector('input[name="delay"]'),
+  stepField: document.querySelector('input[name="step"]'),
+  amountField: document.querySelector('input[name="amount"]'),
 };
 
 refs.formEl.addEventListener('submit', onSubmit);

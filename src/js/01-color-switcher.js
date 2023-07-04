@@ -1,16 +1,19 @@
-const startBtnEl = document.querySelector('button[data-start]');
-const stopBtnEl = document.querySelector('button[data-stop]');
+const refs = {
+    startBtnEl: document.querySelector('button[data-start]'),
+    stopBtnEl: document.querySelector('button[data-stop]'),
+};
+
 let intervalId = null;
 let isActive = false;
 
-startBtnEl.addEventListener('click', onStartBtn);
-stopBtnEl.addEventListener('click', onStopBtn);
+refs.startBtnEl.addEventListener('click', onStartBtn);
+refs.stopBtnEl.addEventListener('click', onStopBtn);
 
 function onStartBtn() {
     if (isActive) {
         return;
     };
-    
+
     isActive = true;
    intervalId = setInterval(() => {
         document.body.style.backgroundColor = getRandomHexColor();

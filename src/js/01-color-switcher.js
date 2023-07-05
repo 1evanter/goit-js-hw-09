@@ -6,6 +6,8 @@ const refs = {
 let intervalId = null;
 let isActive = false;
 
+refs.stopBtnEl.setAttribute("disabled", "");
+
 refs.startBtnEl.addEventListener('click', onStartBtn);
 refs.stopBtnEl.addEventListener('click', onStopBtn);
 
@@ -13,9 +15,10 @@ function onStartBtn() {
     if (isActive) {
         return;
     };
-
+    refs.stopBtnEl.removeAttribute("disabled");
+    refs.startBtnEl.setAttribute("disabled", "");
     isActive = true;
-   intervalId = setInterval(() => {
+    intervalId = setInterval(() => {
         document.body.style.backgroundColor = getRandomHexColor();
     }, 1000)
 };
@@ -23,6 +26,8 @@ function onStartBtn() {
 function onStopBtn() {
     clearInterval(intervalId);
     isActive = false;
+    refs.startBtnEl.removeAttribute("disabled");
+    refs.stopBtnEl.setAttribute("disabled", "");
 };
 
 function getRandomHexColor() {
